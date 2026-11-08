@@ -1,0 +1,13 @@
+{
+  "name": "amc-movies",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Find every AMC showtime for one movie across chosen theatres, dates and times of day.",
+  "scripts": {
+    "dev": "node server.js",
+    "mock": "AMC_MOCK=1 node server.js",
+    "test": "node --test"
+  },
+  "engines": { "node": ">=18" }
+}

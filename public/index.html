@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#111318">
+<title>AMC Showtime Finder</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header>
+  <h1>Showtime Finder</h1>
+  <p class="sub">One movie. Your theatres. Your dates. Your hours.</p>
+</header>
+
+<main>
+  <section id="step-movie" class="card">
+    <h2><span class="num">1</span> Movie</h2>
+    <div id="movie-picked" class="picked" hidden></div>
+    <input id="movie-q" type="search" placeholder="Search now playing…" autocomplete="off">
+    <ul id="movie-list" class="options"></ul>
+  </section>
+
+  <section id="step-theatres" class="card">
+    <h2><span class="num">2</span> Theatres</h2>
+    <div id="theatre-chips" class="chips"></div>
+    <input id="theatre-q" type="search" placeholder="Name, city, state or ZIP…" autocomplete="off">
+    <ul id="theatre-list" class="options"></ul>
+  </section>
+
+  <section class="card">
+    <h2><span class="num">3</span> Dates</h2>
+    <div class="row">
+      <label>From <input id="date-from" type="date"></label>
+      <label>To <input id="date-to" type="date"></label>
+    </div>
+    <div class="presets" id="date-presets">
+      <button type="button" data-days="0">Today</button>
+      <button type="button" data-days="1">Tomorrow</button>
+      <button type="button" data-weekend>This weekend</button>
+      <button type="button" data-range="7">Next 7 days</button>
+    </div>
+  </section>
+
+  <section class="card">
+    <h2><span class="num">4</span> Time of day</h2>
+    <div class="row">
+      <label>Starts after <input id="time-from" type="time"></label>
+      <label>Starts before <input id="time-to" type="time"></label>
+    </div>
+    <div class="presets" id="time-presets">
+      <button type="button" data-from="" data-to="">Any time</button>
+      <button type="button" data-from="12:00" data-to="17:00">Afternoon</button>
+      <button type="button" data-from="17:00" data-to="21:00">Evening</button>
+      <button type="button" data-from="21:00" data-to="02:00">Late</button>
+    </div>
+  </section>
+
+  <button id="search" class="primary" type="button">Find showtimes</button>
+  <p id="status" class="status" role="status"></p>
+  <div id="progress" class="progress" hidden><div></div></div>
+  <section id="results"></section>
+</main>
+
+<dialog id="pw-dialog">
+  <form method="dialog">
+    <p>This app is password protected.</p>
+    <input id="pw-input" type="password" placeholder="Password" autocomplete="current-password">
+    <button class="primary">Unlock</button>
+  </form>
+</dialog>
+
+<script type="module" src="app.js"></script>
+</body>
+</html>
