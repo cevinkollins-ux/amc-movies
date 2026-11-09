@@ -5,8 +5,8 @@
   "type": "module",
   "description": "Find every AMC showtime for one movie across chosen theatres, dates and times of day.",
   "scripts": {
-    "dev": "node server.js",
-    "mock": "AMC_MOCK=1 node server.js",
+    "dev": "node scripts/dev-server.js",
+    "mock": "AMC_MOCK=1 node scripts/dev-server.js",
     "test": "node --test"
   },
   "engines": { "node": ">=18" }

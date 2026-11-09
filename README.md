@@ -41,7 +41,7 @@ New AMC keys only go live on Thursdays, so expect "key rejected" errors until th
 
 ```sh
 cp .env.example .env   # fill in AMC_VENDOR_KEY
-npm run dev            # http://localhost:3000
+npm run dev            # http://localhost:3000 (scripts/dev-server.js)
 npm run mock           # fake data, no key needed
 npm test
 ```

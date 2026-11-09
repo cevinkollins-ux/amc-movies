@@ -5,6 +5,10 @@ import { createServer } from 'node:http';
 import { readFile } from 'node:fs/promises';
 import { existsSync, readFileSync } from 'node:fs';
 import { extname, join, normalize } from 'node:path';
+import { fileURLToPath } from 'node:url';
+
+// Run from the project root no matter where this is launched from.
+process.chdir(fileURLToPath(new URL('..', import.meta.url)));
 
 // Load .env without a dependency.
 if (existsSync('.env')) {
@@ -16,9 +20,9 @@ if (existsSync('.env')) {
 
 const types = { '.html': 'text/html', '.js': 'text/javascript', '.css': 'text/css', '.svg': 'image/svg+xml' };
 const routes = {
-  theatres: (await import('./api/theatres.js')).default,
-  movies: (await import('./api/movies.js')).default,
-  showtimes: (await import('./api/showtimes.js')).default,
+  theatres: (await import('../api/theatres.js')).default,
+  movies: (await import('../api/movies.js')).default,
+  showtimes: (await import('../api/showtimes.js')).default,
 };
 
 const port = Number(process.env.PORT) || 3000;
