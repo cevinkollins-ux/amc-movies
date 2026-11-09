@@ -1,1 +1,5 @@
-{ "outputDirectory": "public" }
+{
+  "framework": null,
+  "buildCommand": "",
+  "outputDirectory": "public"
+}
